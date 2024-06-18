@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+</head>
+<body>
+    <script>
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        function guessNumber() {
+            let userGuess = null;
+
+            while (userGuess !== randomNumber) {
+                userGuess = parseInt(prompt("Guess a number between 1 and 10:"));
+
+                if (userGuess < randomNumber) {
+                    alert("Too low, try again!");
+                } else if (userGuess > randomNumber) {
+                    alert("Too high, try again!");
+                } else if (userGuess === randomNumber) {
+                    alert("Congratulations! You guessed the right number.");
+                } else {
+                    alert("Please enter a valid number.");
+                }
+            }
+        }
+
+        guessNumber();
+    </script>
+</body>
+</html>
